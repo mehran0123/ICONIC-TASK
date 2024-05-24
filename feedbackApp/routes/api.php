@@ -17,7 +17,7 @@ use App\Http\Controllers\LoginController;
 
 Route::prefix('auth')->group(function () {
     Route::post('/login', [LoginController::class, 'login'])->name('api.login');
-    Route::middleware('auth:api')->group(function () {
+    Route::middleware('auth:sanctum')->group(function () {
         Route::post('logout', [LoginController::class, 'logout'])->name('api.logout');
     });
 });

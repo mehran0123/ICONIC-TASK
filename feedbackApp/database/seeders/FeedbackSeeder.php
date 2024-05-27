@@ -6,6 +6,7 @@ use App\Models\Feedback;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 
 class FeedbackSeeder extends Seeder
 {
@@ -20,25 +21,14 @@ class FeedbackSeeder extends Seeder
         }
 
         $users = User::get();
-        Feedback::create([
-            'user_id' => $users->random()->id,
-            'product_title' => 'Bug in login functionality',
-            'description' => 'There is a bug that prevents users from logging in.',
-            'category' => 'bug report'
-        ]);
-
-        Feedback::create([
-            'user_id' => $users->random()->id,
-            'product_title' => 'Add dark mode',
-            'description' => 'A dark mode would be a great addition to the UI.',
-            'category' => 'feature request'
-        ]);
-
-        Feedback::create([
-            'user_id' => $users->random()->id,
-            'product_title' => 'Improve performance',
-            'description' => 'The application is slow on older devices.',
-            'category' => 'improvement'
-        ]);
+        // Create 20 random feedback records
+        for ($i = 0; $i < 50; $i++) {
+            Feedback::create([
+                'user_id' => $users->random()->id,
+                'product_title' => Str::random(20),
+                'description' => Str::random(100),
+                'category' => 'bug report'
+            ]);
+        }
     }
 }

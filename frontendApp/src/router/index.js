@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Login from '../views/Login.vue';
 import Dashboard from '../views/Dashboard.vue';
 import Comments from '../views/Comments.vue';
+import AddFeedback from '../views/AddFeedback.vue';
 
 const isAuthenticated = () => {
     // Check if the token exists in localStorage to determine if the user is authenticated
@@ -17,6 +18,12 @@ const routes = [{
         path: '/dashboard',
         name: 'dashboard',
         component: Dashboard,
+        meta: { requiresAuth: true } // Add requiresAuth meta field
+    },
+    {
+        path: '/add-feedback',
+        name: 'add-feedback',
+        component: AddFeedback,
         meta: { requiresAuth: true } // Add requiresAuth meta field
     },
     {

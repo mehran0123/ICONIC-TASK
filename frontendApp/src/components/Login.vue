@@ -19,7 +19,7 @@
 import axios from "axios"
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
-
+import Swal from 'sweetalert2';
 const email = ref('');
 const password = ref('');
 const router = useRouter();
@@ -37,10 +37,12 @@ const login = async () => {
 
              localStorage.setItem('token', `${response.data.records.token}`);
             // Redirect to dashboard upon successful login
+            Swal.fire('Success', 'Login successful!', 'success');
             router.push('/dashboard');
         } else {
             // Handle login error
-            alert(`Login failed: ${response.data._metadata.message}`)
+            // alert(`Login failed: ${response.data._metadata.message}`)
+            Swal.fire('Error', 'Login failed! Please try again.', response.data._metadata.message);
             console.error('Login failed:', response.data._metadata.message);
         }
     } catch (error) {

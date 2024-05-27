@@ -5,10 +5,12 @@ e
       <div class="col">
         <div class="table-responsive">
           <button @click="logout" class="btn btn-danger" style="position: absolute; top: 10px; right: 10px;">Logout</button>
+          <button @click="addFeedback" class="btn btn-primary">Add Feedback</button>
 
           <table class="table table-striped">
             <thead>
               <tr>
+                <th>ID</th>
                 <th>Title</th>
                 <th>Category</th>
                 <th>User</th>
@@ -18,6 +20,7 @@ e
             </thead>
             <tbody>
               <tr v-for="feedback in feedbacks.data" :key="feedback.id">
+                <td>{{ feedback.id }}</td>
                 <td>{{ feedback.product_title }}</td>
                 <td>{{ feedback.category }}</td>
                 <td>{{ feedback.user.name }}</td>
@@ -31,7 +34,7 @@ e
 
           <!-- Pagination -->
           <nav aria-label="Feedback Pagination">
-            <!-- <ul class="pagination">
+            <ul class="pagination">
               <li class="page-item" :class="{ disabled: currentPage === 1 }">
                 <button class="page-link" @click="prevPage" :disabled="currentPage === 1">
                   Previous
@@ -45,7 +48,7 @@ e
                   Next
                 </button>
               </li>
-            </ul> -->
+            </ul>
           </nav>
         </div>
       </div>
@@ -54,13 +57,15 @@ e
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, computed, onBeforeMount } from 'vue';
 import axios from 'axios';
 import { useRouter } from 'vue-router';
+import Swal from 'sweetalert2';
 
 
 const router = useRouter();
 const feedbacks = ref([]);
+const totalrecords = ref(0);
 const currentPage = ref(1);
 const perPage = 10; // Number of feedbacks per page
 
@@ -69,10 +74,15 @@ const addComments = (commentId) => {
      router.push({ name: 'add-comment', params: { id: commentId } });
 };
 
+const addFeedback = () => {
+  router.push('/add-feedback');
+};
+
 
 
 const fetchFeedbacks = async () => {
   try {
+  //  alert('hhh')
     const token = localStorage.getItem('token');
     const response = await axios.get(`http://127.0.0.1:8000/api/feedback/get-feedbacks?page=${currentPage.value}&perPage=${perPage}`, {
       headers: {
@@ -82,6 +92,7 @@ const fetchFeedbacks = async () => {
 
     if (response.data._metadata.outcomeCode === 200) { 
       feedbacks.value = response.data.records;
+      totalrecords.value = response.data.records.total;
     } else {
       throw new Error(response.data._metadata.message);
     }
@@ -97,22 +108,24 @@ const formatDate = (dateString) => {
   return date.toLocaleDateString('en-GB', options);
 };
 
-
-const totalPages = computed(() => Math.ceil(feedbacks.value.total / perPage));
+const totalPages = computed(() => Math.ceil(totalrecords.value / perPage));
 
 const changePage = (page) => {
   currentPage.value = page;
+    fetchFeedbacks();
 };
 
 const nextPage = () => {
   if (currentPage.value < totalPages.value) {
     currentPage.value++;
+    fetchFeedbacks();
   }
 };
 
 const prevPage = () => {
   if (currentPage.value > 1) {
     currentPage.value--;
+    fetchFeedbacks()
   }
 };
 
@@ -127,5 +140,5 @@ const logout = async () => {
   router.push('/');
 };
 
-onMounted(fetchFeedbacks);
+onBeforeMount(fetchFeedbacks);
 </script>

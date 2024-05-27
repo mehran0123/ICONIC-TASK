@@ -23,10 +23,10 @@ import axios from 'axios';
 import { useRouter,useRoute } from 'vue-router';
 import { CKEditor } from '@ckeditor/ckeditor5-vue';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-
+import Swal from 'sweetalert2';
 
 const editor = ClassicEditor;
-const commentContent = ref('<p>Type your content here...</p>');
+const commentContent = ref('');
 const editorConfig = ref({
   // Add any configuration options here
 });
@@ -38,8 +38,12 @@ const feedback_id = route.params.id;
 const saveComment = async () => {
   const token = localStorage.getItem('token');
   if (!token) {
-    console.error('No token found in localStorage');
+    // console.error('No token found in localStorage');
+       Swal.fire('Error', 'No token found in localStorage', 'error');
     return;
+  }
+  if (commentContent.value.trim() == '' && commentContent.value.length == 0) {
+      return Swal.fire('Error', 'Comment Required', 'error');
   }
 
   try {
@@ -58,15 +62,19 @@ const saveComment = async () => {
      // return  console.log(response);
     // Check if the comment was successfully stored
     if (response.data._metadata.outcomeCode === 200) {
-    
-      alert(`Message:, ${response.data._metadata.message}`);
+  
+      // alert(`Message:, ${response.data._metadata.message}`);
+           Swal.fire('Success', 'Comment Added Successfully!', 'success');
       // Optionally, you can show a success message or update the UI
     } else {
-      console.error('Failed to save comment:', response.data._metadata.message);
+      // console.error('Failed to save comment:', response.data._metadata.message);
+        Swal.fire('Error', 'Login failed! Please try again.', response.data._metadata.message);
       // Optionally, you can show an error message or handle the error
     }
   } catch (error) {
-    console.error('Error saving comment:', error);
+    // console.error('Error saving comment:', error);
+        Swal.fire('Error', 'Error saving comment:', error);
+    
     // Handle any network errors or exceptions
   } finally {
     // Redirect back to the main page

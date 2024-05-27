@@ -13,6 +13,7 @@
     "@ckeditor/ckeditor5-vue": "^5.1.0",
     "axios": "^1.7.2",
     "bootstrap": "^5.3.3",
+    "sweetalert2": "^11.11.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },

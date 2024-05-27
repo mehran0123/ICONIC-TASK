@@ -23,7 +23,7 @@ class CommentsController extends Controller
     {
         $data = $this->commentsService->StoreComment($request);
         if ($this->commentsService->hasError())
-            return (new GlobalApiResponse())->error(GlobalApiResponseCodeBook::INVALID_CREDENTIALS, 'INVALID CREDENTIALS', $this->commentsService->getErrors());
+            return (new GlobalApiResponse())->error(GlobalApiResponseCodeBook::INVALID_FORM_INPUTS, 'INVALID CREDENTIALS', $this->commentsService->getErrors());
         return (new GlobalApiResponse())->success('Comment Stored Successfully!', 1,$data);
     }
 

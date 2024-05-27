@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('feedback', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('product_title');
-            $table->unsignedBigInteger('user_id'); // Foreign key
-            $table->text('description');
-            $table->string('category');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('feedback_id');
+            $table->text('content');
             $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('feedback_id')->references('id')->on('feedbacks')->onDelete('cascade');
 
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('feedback');
+        Schema::dropIfExists('comments');
     }
 };

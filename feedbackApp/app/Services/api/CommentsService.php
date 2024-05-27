@@ -2,13 +2,12 @@
 
 namespace App\Services\api;
 
-use App\Http\Requests\BaseRequest;
 use App\Models\User;
 use App\Services\BaseService;
 use Illuminate\Support\Facades\Auth;
 use function Laravel\Prompts\password;
 
-class AuthService extends BaseService
+class CommentsService extends BaseService
 {
     public function Login($request)
     {

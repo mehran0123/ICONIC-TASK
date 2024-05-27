@@ -2,44 +2,37 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreFeedbackRequest;
-use App\Http\Requests\UpdateFeedbackRequest;
-use App\Models\Feedback;
+use App\Http\Requests\FeedBackRequest;
+use App\libs\Response\GlobalApiResponse;
+use App\libs\Response\GlobalApiResponseCodeBook;
+use App\Services\api\FeedBackService;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller
 {
-    public function index()
+    private $feedbackService;
+
+    public function __construct(FeedBackService $feedbackService)
     {
-        return Feedback::all();
+        $this->feedbackService = $feedbackService;
     }
 
-    public function store(StoreFeedbackRequest $request)
+    public function StoreFeedback(FeedBackRequest $request)
     {
-        $feedback = Feedback::create($request->validated());
-
-        return response()->json($feedback, 201);
+        $data = $this->feedbackService->StoreFeedback($request);
+        if ($this->feedbackService->hasError())
+            return (new GlobalApiResponse())->error(GlobalApiResponseCodeBook::INVALID_CREDENTIALS, 'INVALID CREDENTIALS', $this->feedbackService->getErrors());
+        return (new GlobalApiResponse())->success('Feedback Stored Successfully!', 1,$data);
     }
 
-    public function show($id)
+    public function getFeedbacks()
     {
-        return Feedback::findOrFail($id);
+        $data = $this->feedbackService->getFeedbacks();
+        if ($this->feedbackService->hasError())
+            return (new GlobalApiResponse())->error(GlobalApiResponseCodeBook::INVALID_CREDENTIALS, 'INVALID CREDENTIALS', $this->feedbackService->getErrors());
+        return (new GlobalApiResponse())->success('Feedback Fetched Successfully!', 1,$data);
     }
 
-    public function update(UpdateFeedbackRequest $request, $id)
-    {
-        $feedback = Feedback::findOrFail($id);
 
-        $feedback->update($request->validated());
 
-        return response()->json($feedback);
-    }
-
-    public function destroy($id)
-    {
-        $feedback = Feedback::findOrFail($id);
-        $feedback->delete();
-
-        return response()->json(null, 204);
-    }
 }

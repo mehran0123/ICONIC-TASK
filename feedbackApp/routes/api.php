@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\FeedbackController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,12 @@ Route::prefix('auth')->group(function () {
     });
 });
 
-
+Route::prefix('feedback')->group(function () {
+    Route::middleware('auth:sanctum')->group(function () {
+        Route::post('store-feedback', [FeedbackController::class, 'StoreFeedback'])->name('storeFeedback');
+        Route::get('get-feedbacks', [FeedbackController::class, 'getFeedbacks'])->name('getFeedbacks');
+    });
+});
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

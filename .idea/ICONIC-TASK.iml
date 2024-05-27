@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/feedbackApp/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/feedbackApp/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
+      <sourceFolder url="file://$MODULE_DIR$/feedbackApp/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+      <sourceFolder url="file://$MODULE_DIR$/feedbackApp/tests" isTestSource="true" packagePrefix="Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/feedbackApp/tests/Feature" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/feedbackApp/tests/Unit" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/brick/math" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/carbonphp/carbon-doctrine-types" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/dflydev/dot-access-data" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/dragonmantank/cron-expression" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/egulias/email-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/fakerphp/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/filp/whoops" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/fruitcake/php-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/guzzlehttp/uri-template" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/laravel/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/laravel/pint" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/laravel/prompts" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/laravel/sail" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/laravel/sanctum" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/laravel/serializable-closure" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/league/commonmark" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/league/config" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/league/flysystem-local" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/league/mime-type-detection" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/mockery/mockery" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/nette/schema" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/nette/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/nunomaduro/collision" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/nunomaduro/termwind" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/phar-io/manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/phpunit/php-code-coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/phpunit/php-file-iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/phpunit/php-invoker" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/phpunit/php-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/psr/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/psy/psysh" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/ramsey/collection" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/cli-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/code-unit" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/code-unit-reverse-lookup" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/complexity" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/environment" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/global-state" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/lines-of-code" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/object-enumerator" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/object-reflector" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/type" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/spatie/backtrace" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/spatie/flare-client-php" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/spatie/ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/spatie/laravel-ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/mailer" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/polyfill-intl-idn" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/polyfill-php72" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/polyfill-php83" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/polyfill-uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/uid" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/theseer/tokenizer" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/vlucas/phpdotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/voku/portable-ascii" />
+      <excludeFolder url="file://$MODULE_DIR$/feedbackApp/vendor/webmozart/assert" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

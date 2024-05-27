@@ -2,31 +2,23 @@
 
 namespace App\Services\api;
 
-use App\Models\User;
+use App\Models\Comment;
 use App\Services\BaseService;
 use Illuminate\Support\Facades\Auth;
-use function Laravel\Prompts\password;
 
 class CommentsService extends BaseService
 {
-    public function Login($request)
+    public function StoreComment($request)
     {
-
         try {
-            $credentials = ['email'=> request()->get('email'),'password' => request()->get('password')];
-            if (Auth::attempt($credentials)) {
-                $user = User::where('email', request()->get('email'))->first();
-                $token = $user->createToken('authToken')->plainTextToken;
-
-                $userData['id'] = $user->id;
-                $userData['name'] = $user->name;
-                $userData['email'] = $user->email;
-                $userData['token_name'] = 'Bearer';
-                $userData['token'] = $token;
-                return $userData;
-            } else {
-                return $this->addErrors(['Invalid credentials']);
-            }
+            \DB::beginTransaction();
+            $comment =  new Comment();
+            $comment->user_id = Auth::id();
+            $comment->feedback_id  = request()->get('feedback_id');
+            $comment->content = request()->get('content');
+            $comment->save();
+            \DB::commit();
+            return $comment;
         } catch (\Exception $e) {
             return $this->addErrors([$e->getMessage()]);
         }

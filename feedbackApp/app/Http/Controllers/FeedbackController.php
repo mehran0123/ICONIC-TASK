@@ -21,7 +21,7 @@ class FeedbackController extends Controller
     {
         $data = $this->feedbackService->StoreFeedback($request);
         if ($this->feedbackService->hasError())
-            return (new GlobalApiResponse())->error(GlobalApiResponseCodeBook::INVALID_CREDENTIALS, 'INVALID CREDENTIALS', $this->feedbackService->getErrors());
+            return (new GlobalApiResponse())->error(GlobalApiResponseCodeBook::INVALID_FORM_INPUTS, 'INVALID CREDENTIALS', $this->feedbackService->getErrors());
         return (new GlobalApiResponse())->success('Feedback Stored Successfully!', 1,$data);
     }
 

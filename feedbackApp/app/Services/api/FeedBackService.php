@@ -31,7 +31,9 @@ class FeedBackService extends BaseService
     {
 
         try {
-            $feedbacks = Feedback::with('user:id,name')->paginate(10);
+            $feedbacks = Feedback::with('user:id,name')->with(['comments' => function ($q) {
+                $q->select('id','user_id','feedback_id','content','created_at')->with('user:id,name');
+            }])->paginate(10);
             return $feedbacks;
         } catch (\Exception $e) {
             return $this->addErrors([$e->getMessage()]);

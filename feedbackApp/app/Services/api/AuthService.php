@@ -23,7 +23,7 @@ class AuthService extends BaseService
                 $userData['name'] = $user->name;
                 $userData['email'] = $user->email;
                 $userData['token_name'] = 'Bearer';
-                $userData['token'] = $token;
+                $userData['token'] ='Bearer ' . $token;
                 return $userData;
             } else {
                 return $this->addErrors(['Invalid credentials']);
